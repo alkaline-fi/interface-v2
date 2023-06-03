@@ -87,7 +87,7 @@ export function SupplyLiquidityV3() {
 
   const dispatch = useAppDispatch();
 
-  const feeAmount = 100;
+  const feeAmount = parseInt('100');
 
   const expertMode = useIsExpertMode();
 
@@ -148,10 +148,7 @@ export function SupplyLiquidityV3() {
       if (chainId === ChainId.MATIC || chainId === ChainId.MUMBAI) {
         chainSymbol = 'MATIC';
       }
-      if (
-        chainId === ChainId.DOGECHAIN ||
-        chainId === ChainId.DOEGCHAIN_TESTNET
-      ) {
+      if (chainId === ChainId.DOGECHAIN || chainId === ChainId.DOGETESTNET) {
         chainSymbol = 'WDOGE';
       }
       if (chainId === ChainId.ZKTESTNET) {

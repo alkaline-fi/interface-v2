@@ -5,12 +5,17 @@ import { NEW_QUICK_ADDRESS, QUICK_ADDRESS } from './v3/addresses';
 export const AVERAGE_L1_BLOCK_TIME = 12000;
 
 export const CHAIN_IDS_TO_NAMES = {
+  [ChainId.MAINNET]: 'mainnet',
   [ChainId.MATIC]: 'matic',
   [ChainId.MUMBAI]: 'mumbai',
   [ChainId.DOGECHAIN]: 'dogechain',
-  [ChainId.DOEGCHAIN_TESTNET]: 'dogechain_testnet',
-  [ChainId.ZKEVM]: 'zkevm',
+  [ChainId.DOGETESTNET]: 'dogechain_testnet',
+  [ChainId.ZK_EVM]: 'zkevm',
   [ChainId.ZKTESTNET]: 'zkevm_testnet',
+  [ChainId.ZKSYNCALPHA]: 'zksyncalpha',
+  [ChainId.ZKSYNCERA]: 'zksyncera',
+  [ChainId.LINEAMAIN]: 'lineamain',
+  [ChainId.LINEATEST]: 'lineatest',
 };
 
 export enum TxnType {
@@ -31,6 +36,16 @@ export enum SmartRouter {
 }
 
 export const WALLCHAIN_PARAMS = {
+  [ChainId.MAINNET]: {
+    [SmartRouter.PARASWAP]: {
+      apiURL: '',
+      apiKey: '',
+    },
+    [SmartRouter.QUICKSWAP]: {
+      apiURL: '',
+      apiKey: '',
+    },
+  },
   [ChainId.MATIC]: {
     [SmartRouter.PARASWAP]: {
       apiURL: 'https://matic.wallchains.com/upgrade_txn/',
@@ -51,7 +66,7 @@ export const WALLCHAIN_PARAMS = {
       apiKey: '',
     },
   },
-  [ChainId.DOEGCHAIN_TESTNET]: {
+  [ChainId.DOGETESTNET]: {
     [SmartRouter.PARASWAP]: {
       apiURL: '',
       apiKey: '',
@@ -81,7 +96,47 @@ export const WALLCHAIN_PARAMS = {
       apiKey: '',
     },
   },
-  [ChainId.ZKEVM]: {
+  [ChainId.ZK_EVM]: {
+    [SmartRouter.PARASWAP]: {
+      apiURL: '',
+      apiKey: '',
+    },
+    [SmartRouter.QUICKSWAP]: {
+      apiURL: '',
+      apiKey: '',
+    },
+  },
+  [ChainId.ZKSYNCALPHA]: {
+    [SmartRouter.PARASWAP]: {
+      apiURL: '',
+      apiKey: '',
+    },
+    [SmartRouter.QUICKSWAP]: {
+      apiURL: '',
+      apiKey: '',
+    },
+  },
+  [ChainId.ZKSYNCERA]: {
+    [SmartRouter.PARASWAP]: {
+      apiURL: '',
+      apiKey: '',
+    },
+    [SmartRouter.QUICKSWAP]: {
+      apiURL: '',
+      apiKey: '',
+    },
+  },
+  [ChainId.LINEAMAIN]: {
+    [SmartRouter.PARASWAP]: {
+      apiURL: '',
+      apiKey: '',
+    },
+    [SmartRouter.QUICKSWAP]: {
+      apiURL: '',
+      apiKey: '',
+    },
+  },
+  [ChainId.LINEATEST]: {
     [SmartRouter.PARASWAP]: {
       apiURL: '',
       apiKey: '',
@@ -94,26 +149,31 @@ export const WALLCHAIN_PARAMS = {
 };
 
 export const BONUS_CUTOFF_AMOUNT = {
+  [ChainId.MAINNET]: 0,
   [ChainId.MUMBAI]: 0,
   [ChainId.MATIC]: 0,
-  [ChainId.DOEGCHAIN_TESTNET]: 0,
+  [ChainId.DOGETESTNET]: 0,
   [ChainId.DOGECHAIN]: 0,
   [ChainId.ZKTESTNET]: 0,
-  [ChainId.ZKEVM]: 0,
+  [ChainId.ZK_EVM]: 0,
+  [ChainId.ZKSYNCALPHA]: 0,
+  [ChainId.ZKSYNCERA]: 0,
+  [ChainId.LINEAMAIN]: 0,
+  [ChainId.LINEATEST]: 0,
 };
 
 export const GlobalConst = {
   blacklists: {
     TOKEN_BLACKLIST: [
-      '0x495c7f3a713870f68f8b418b355c085dfdc412c3',
-      '0xc3761eb917cd790b30dad99f6cc5b4ff93c4f9ea',
-      '0xe31debd7abff90b06bca21010dd860d8701fd901',
-      '0xfc989fbb6b3024de5ca0144dc23c18a063942ac1',
-      '0xf4eda77f0b455a12f3eb44f8653835f377e36b76',
+      '0x495c7f3A713870F68F8B418B355c085dFDC412C3',
+      '0xc3761EB917CD790B30dAD99f6Cc5b4Ff93C4F9eA',
+      '0xe31DEbd7AbFF90B06bCA21010dD860d8701fd901',
+      '0xFc989fBB6B3024DE5Ca0144dc23C18A063942Ac1',
+      '0xF4edA77f0B455A12f3eb44F8653835f377e36b76',
     ],
     PAIR_BLACKLIST: [
-      '0xb6a741f37d6e455ebcc9f17e2c16d0586c3f57a5',
-      '0x97cb8cbe91227ba87fc21aaf52c4212d245da3f8',
+      '0xB6A741f37D6e455Ebcc9f17E2c16d0586C3f57A5',
+      '0x97CB8cbe91227ba87fC21aAF52c4212d245dA3F8',
     ],
   },
   addresses: {
@@ -203,12 +263,15 @@ export const GlobalConst = {
 };
 
 export const SUPPORTED_CHAINIDS = [
+  ChainId.MAINNET,
   ChainId.MATIC,
   ChainId.MUMBAI,
   ChainId.DOGECHAIN,
-  ChainId.DOEGCHAIN_TESTNET,
+  ChainId.DOGETESTNET,
   ChainId.ZKTESTNET,
-  ChainId.ZKEVM,
+  ChainId.ZK_EVM,
+  ChainId.LINEATEST,
+  ChainId.ZKSYNCALPHA,
 ];
 
 export interface GammaPair {
@@ -227,6 +290,7 @@ export const GammaPairs: {
     [key: string]: GammaPair[];
   };
 } = {
+  [ChainId.MAINNET]: {},
   [ChainId.MATIC]: {
     '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270-0x7ceb23fd6bc0add59e62ac25578270cff1b9f619': [
       {
@@ -288,12 +352,12 @@ export const GammaPairs: {
         pid: 5,
       },
     ],
-    '0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6-0x2791bca1f2de4661ed88a30c99a7a9449aa84174': [
+    '0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6-0x2791bca1f2de4661ed88a30c99a7a9449aa84174': [
       {
         type: Presets.GAMMA_NARROW,
         title: 'Narrow',
         address: '0x3f35705479d9d77c619b2aac9dd7a64e57151506',
-        token0Address: '0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6',
+        token0Address: '0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6',
         token1Address: '0x2791bca1f2de4661ed88a30c99a7a9449aa84174',
         ableToFarm: true,
         pid: 6,
@@ -301,19 +365,19 @@ export const GammaPairs: {
       {
         type: Presets.GAMMA_WIDE,
         title: 'Wide',
-        address: '0xe40a5aa22cbccc8165aedd86f6d03fc5f551c3c6',
-        token0Address: '0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6',
+        address: '0xE40a5aa22CBCcc8165aedd86f6d03fC5F551c3C6',
+        token0Address: '0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6',
         token1Address: '0x2791bca1f2de4661ed88a30c99a7a9449aa84174',
         ableToFarm: true,
         pid: 7,
       },
     ],
-    '0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6-0x7ceb23fd6bc0add59e62ac25578270cff1b9f619': [
+    '0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6-0x7ceb23fd6bc0add59e62ac25578270cff1b9f619': [
       {
         type: Presets.GAMMA_NARROW,
         title: 'Narrow',
         address: '0x4b9e26a02121a1c541403a611b542965bd4b68ce',
-        token0Address: '0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6',
+        token0Address: '0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6',
         token1Address: '0x7ceb23fd6bc0add59e62ac25578270cff1b9f619',
         ableToFarm: true,
         pid: 8,
@@ -322,7 +386,7 @@ export const GammaPairs: {
         type: Presets.GAMMA_WIDE,
         title: 'Wide',
         address: '0xadc7b4096c3059ec578585df36e6e1286d345367',
-        token0Address: '0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6',
+        token0Address: '0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6',
         token1Address: '0x7ceb23fd6bc0add59e62ac25578270cff1b9f619',
         ableToFarm: true,
         pid: 9,
@@ -416,7 +480,7 @@ export const GammaPairs: {
       {
         type: Presets.GAMMA_NARROW,
         title: 'Narrow',
-        address: '0xac15baba7bcc532f8727c1a42b23501f59630115',
+        address: '0xaC15BaBA7Bcc532F8727C1A42B23501f59630115',
         token0Address: '0x7ceb23fd6bc0add59e62ac25578270cff1b9f619',
         token1Address: '0xa3fa99a148fa48d14ed51d610c367c61876997f1',
         pid: 18,
@@ -430,12 +494,12 @@ export const GammaPairs: {
         pid: 19,
       },
     ],
-    '0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6-0xa3fa99a148fa48d14ed51d610c367c61876997f1': [
+    '0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6-0xa3fa99a148fa48d14ed51d610c367c61876997f1': [
       {
         type: Presets.GAMMA_NARROW,
         title: 'Narrow',
         address: '0x3e99b86b16f36dcf3b987ebc8b754c54030403b5',
-        token0Address: '0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6',
+        token0Address: '0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6',
         token1Address: '0xa3fa99a148fa48d14ed51d610c367c61876997f1',
         pid: 20,
       },
@@ -443,7 +507,7 @@ export const GammaPairs: {
         type: Presets.GAMMA_WIDE,
         title: 'Wide',
         address: '0x5ec3511b49d4fe7798015a26a83abdc01261615b',
-        token0Address: '0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6',
+        token0Address: '0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6',
         token1Address: '0xa3fa99a148fa48d14ed51d610c367c61876997f1',
         pid: 21,
       },
@@ -787,24 +851,24 @@ export const GammaPairs: {
         pid: 55,
       },
     ],
-    '0x2791bca1f2de4661ed88a30c99a7a9449aa84174-0x385eeac5cb85a38a9a07a70c73e0a3271cfb54a7': [
+    '0x2791bca1f2de4661ed88a30c99a7a9449aa84174-0x385Eeac5cB85A38A9a07A70c73e0a3271CfB54A7': [
       {
         type: Presets.GAMMA_WIDE,
         title: 'Wide',
         address: '0x3fb73a554defa86b18f72e543aa2174a4d5f9621',
         token0Address: '0x2791bca1f2de4661ed88a30c99a7a9449aa84174',
-        token1Address: '0x385eeac5cb85a38a9a07a70c73e0a3271cfb54a7',
+        token1Address: '0x385Eeac5cB85A38A9a07A70c73e0a3271CfB54A7',
         ableToFarm: true,
         pid: 56,
       },
     ],
-    '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270-0x385eeac5cb85a38a9a07a70c73e0a3271cfb54a7': [
+    '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270-0x385Eeac5cB85A38A9a07A70c73e0a3271CfB54A7': [
       {
         type: Presets.GAMMA_WIDE,
         title: 'Wide',
         address: '0x2ef46196d7d25b5111ca1fcba206b248fee32d8d',
         token0Address: '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270',
-        token1Address: '0x385eeac5cb85a38a9a07a70c73e0a3271cfb54a7',
+        token1Address: '0x385Eeac5cB85A38A9a07A70c73e0a3271CfB54A7',
         ableToFarm: true,
         pid: 57,
       },
@@ -820,23 +884,23 @@ export const GammaPairs: {
         pid: 58,
       },
     ],
-    '0x03b54a6e9a984069379fae1a4fc4dbae93b3bccd-0x7ceb23fd6bc0add59e62ac25578270cff1b9f619': [
+    '0x03b54A6e9a984069379fae1a4fC4dBAE93B3bCCD-0x7ceb23fd6bc0add59e62ac25578270cff1b9f619': [
       {
         type: Presets.GAMMA_DYNAMIC,
         title: 'Pegged Price',
         address: '0x6a6d4d17c2e38d076264081676ffcdddf32c9715',
-        token0Address: '0x03b54a6e9a984069379fae1a4fc4dbae93b3bccd',
+        token0Address: '0x03b54A6e9a984069379fae1a4fC4dBAE93B3bCCD',
         token1Address: '0x7ceb23fd6bc0add59e62ac25578270cff1b9f619',
         ableToFarm: true,
         pid: 59,
       },
     ],
-    '0x03b54a6e9a984069379fae1a4fc4dbae93b3bccd-0x3a58a54c066fdc0f2d55fc9c89f0415c92ebf3c4': [
+    '0x03b54A6e9a984069379fae1a4fC4dBAE93B3bCCD-0x3a58a54c066fdc0f2d55fc9c89f0415c92ebf3c4': [
       {
         type: Presets.GAMMA_NARROW,
         title: 'Narrow',
         address: '0x972a53e2ee68d5c2b1614f65061815e06b1cce68',
-        token0Address: '0x03b54a6e9a984069379fae1a4fc4dbae93b3bccd',
+        token0Address: '0x03b54A6e9a984069379fae1a4fC4dBAE93B3bCCD',
         token1Address: '0x3a58a54c066fdc0f2d55fc9c89f0415c92ebf3c4',
         pid: 60,
       },
@@ -940,12 +1004,12 @@ export const GammaPairs: {
         pid: 69,
       },
     ],
-    '0x03b54a6e9a984069379fae1a4fc4dbae93b3bccd-0x2791bca1f2de4661ed88a30c99a7a9449aa84174': [
+    '0x03b54A6e9a984069379fae1a4fC4dBAE93B3bCCD-0x2791bca1f2de4661ed88a30c99a7a9449aa84174': [
       {
         type: Presets.GAMMA_NARROW,
         title: 'Narrow',
         address: '0x34ffbd9db6b9bd8b095a0d156de69a2ad2944666',
-        token0Address: '0x03b54a6e9a984069379fae1a4fc4dbae93b3bccd',
+        token0Address: '0x03b54A6e9a984069379fae1a4fC4dBAE93B3bCCD',
         token1Address: '0x2791bca1f2de4661ed88a30c99a7a9449aa84174',
         ableToFarm: true,
         pid: 70,
@@ -962,12 +1026,12 @@ export const GammaPairs: {
         pid: 71,
       },
     ],
-    '0x03b54a6e9a984069379fae1a4fc4dbae93b3bccd-0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270': [
+    '0x03b54A6e9a984069379fae1a4fC4dBAE93B3bCCD-0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270': [
       {
         type: Presets.GAMMA_NARROW,
         title: 'Narrow',
         address: '0x9f19ad14cd941e29b0e7ed8f5a1003fae4993dcd',
-        token0Address: '0x03b54a6e9a984069379fae1a4fc4dbae93b3bccd',
+        token0Address: '0x03b54A6e9a984069379fae1a4fC4dBAE93B3bCCD',
         token1Address: '0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270',
         ableToFarm: true,
         pid: 72,
@@ -1061,12 +1125,12 @@ export const GammaPairs: {
         masterChefIndex: 1,
       },
     ],
-    '0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6-0x67eb41a14c0fe5cd701fc9d5a3d6597a72f641a6': [
+    '0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6-0x67eb41a14c0fe5cd701fc9d5a3d6597a72f641a6': [
       {
         type: Presets.GAMMA_WIDE,
         title: 'Wide',
         address: '0xcbb7fae80e4f5c0cbfe1af7bb1f19692f9532cfa',
-        token0Address: '0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6',
+        token0Address: '0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6',
         token1Address: '0x67eb41a14c0fe5cd701fc9d5a3d6597a72f641a6',
         pid: 2,
         masterChefIndex: 1,
@@ -1086,10 +1150,10 @@ export const GammaPairs: {
     ],
   },
   [ChainId.MUMBAI]: {},
-  [ChainId.DOEGCHAIN_TESTNET]: {},
+  [ChainId.DOGETESTNET]: {},
   [ChainId.DOGECHAIN]: {},
   [ChainId.ZKTESTNET]: {},
-  [ChainId.ZKEVM]: {
+  [ChainId.ZK_EVM]: {
     '0x4f9a0e7fd2bf6067db6994cf12e4495df938e6e9-0xa8ce8aee21bc2a48a5ef670afcc9274c7bbbc035': [
       {
         type: Presets.GAMMA_NARROW,
@@ -1204,6 +1268,10 @@ export const GammaPairs: {
       },
     ],
   },
+  [ChainId.ZKSYNCALPHA]: {},
+  [ChainId.ZKSYNCERA]: {},
+  [ChainId.LINEAMAIN]: {},
+  [ChainId.LINEATEST]: {},
 };
 
 export const GlobalValue = {
@@ -1346,7 +1414,7 @@ export const GlobalValue = {
       ),
       GHST: new Token(
         ChainId.MATIC,
-        '0x385eeac5cb85a38a9a07a70c73e0a3271cfb54a7',
+        '0x385Eeac5cB85A38A9a07A70c73e0a3271CfB54A7',
         18,
         'GHST',
         'Aavegotchi GHST Token',
@@ -1402,7 +1470,7 @@ export const GlobalValue = {
       ),
       WSTETH: new Token(
         ChainId.MATIC,
-        '0x03b54a6e9a984069379fae1a4fc4dbae93b3bccd',
+        '0x03b54A6e9a984069379fae1a4fC4dBAE93B3bCCD',
         18,
         'wstETH',
         'Wrapped liquid staked Ether 2.0',
@@ -1465,7 +1533,7 @@ export const GlobalValue = {
 
 export const paraswapTax: { [key: string]: number } = {
   '0xed88227296943857409a8e0f15ad7134e70d0f73': 100,
-  '0x37eb60f78e06c4bb2a5f836b0fc6bccbbaa995b3': 0,
+  '0x37eB60F78e06c4BB2A5F836B0Fc6BCcBbaA995b3': 0,
   '0xf16ec50ec49abc95fa793c7871682833b6bc47e7': 1300,
   '0xfca466f2fa8e667a517c9c6cfa99cf985be5d9b1': 300,
 };
@@ -1549,7 +1617,7 @@ export const ContestPairs: any = {
       token1Address: '0x7ceb23fd6bc0add59e62ac25578270cff1b9f619',
     },
   ],
-  [ChainId.ZKEVM]: [
+  [ChainId.ZK_EVM]: [
     {
       name: 'All',
       address: 'all',
@@ -1579,7 +1647,7 @@ export const ContestPairs: any = {
       token1Address: '0xa2036f0538221a77a3937f1379699f44945018d0',
     },
   ],
-  [ChainId.DOEGCHAIN_TESTNET]: [],
+  [ChainId.DOGETESTNET]: [],
   [ChainId.DOGECHAIN]: [],
   [ChainId.ZKTESTNET]: [],
   [ChainId.MUMBAI]: [],

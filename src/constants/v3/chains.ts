@@ -56,7 +56,7 @@ export const CHAIN_INFO: ChainInfo = {
     nativeCurrencyName: 'Ether',
     nativeCurrencyDecimals: 18,
   },
-  [ChainId.ZKEVM]: {
+  [ChainId.ZK_EVM]: {
     docs: 'https://algebra.finance/',
     explorer: 'https://zkevm.polygonscan.com',
     infoLink: 'https://algebra.finance',

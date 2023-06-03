@@ -10,6 +10,7 @@ export type ApolloChainMap = Readonly<
 >;
 
 export const clientV2: ApolloChainMap = {
+  [ChainId.MAINNET]: undefined,
   [ChainId.MATIC]: new ApolloClient({
     link: new HttpLink({
       uri: process.env.REACT_APP_GRAPH_V2_137_API_URL,
@@ -23,12 +24,17 @@ export const clientV2: ApolloChainMap = {
     cache: new InMemoryCache(),
   }),
   [ChainId.MUMBAI]: undefined,
-  [ChainId.ZKEVM]: undefined,
+  [ChainId.ZK_EVM]: undefined,
   [ChainId.ZKTESTNET]: undefined,
-  [ChainId.DOEGCHAIN_TESTNET]: undefined,
+  [ChainId.DOGETESTNET]: undefined,
+  [ChainId.ZKSYNCALPHA]: undefined,
+  [ChainId.ZKSYNCERA]: undefined,
+  [ChainId.LINEAMAIN]: undefined,
+  [ChainId.LINEATEST]: undefined,
 };
 
 export const clientV3: ApolloChainMap = {
+  [ChainId.MAINNET]: undefined,
   [ChainId.MATIC]: new ApolloClient({
     link: new HttpLink({
       uri: process.env.REACT_APP_GRAPH_V3_137_API_URL,
@@ -42,17 +48,22 @@ export const clientV3: ApolloChainMap = {
     }),
     cache: new InMemoryCache(),
   }),
-  [ChainId.DOEGCHAIN_TESTNET]: undefined,
+  [ChainId.DOGETESTNET]: undefined,
   [ChainId.ZKTESTNET]: undefined,
-  [ChainId.ZKEVM]: new ApolloClient({
+  [ChainId.ZK_EVM]: new ApolloClient({
     link: new HttpLink({
       uri: process.env.REACT_APP_GRAPH_V3_1101_API_URL,
     }),
     cache: new InMemoryCache(),
   }),
+  [ChainId.ZKSYNCALPHA]: undefined,
+  [ChainId.ZKSYNCERA]: undefined,
+  [ChainId.LINEAMAIN]: undefined,
+  [ChainId.LINEATEST]: undefined,
 };
 
 export const farmingClient: ApolloChainMap = {
+  [ChainId.MAINNET]: undefined,
   [ChainId.MATIC]: new ApolloClient({
     link: new HttpLink({
       uri: process.env.REACT_APP_V3_FARMING_API_137_URL,
@@ -66,17 +77,22 @@ export const farmingClient: ApolloChainMap = {
     cache: new InMemoryCache(),
   }),
   [ChainId.MUMBAI]: undefined,
-  [ChainId.DOEGCHAIN_TESTNET]: undefined,
+  [ChainId.DOGETESTNET]: undefined,
   [ChainId.ZKTESTNET]: undefined,
-  [ChainId.ZKEVM]: new ApolloClient({
+  [ChainId.ZK_EVM]: new ApolloClient({
     link: new HttpLink({
       uri: process.env.REACT_APP_V3_FARMING_API_1101_URL,
     }),
     cache: new InMemoryCache(),
   }),
+  [ChainId.ZKSYNCALPHA]: undefined,
+  [ChainId.ZKSYNCERA]: undefined,
+  [ChainId.LINEAMAIN]: undefined,
+  [ChainId.LINEATEST]: undefined,
 };
 
 export const blockClient: ApolloChainMap = {
+  [ChainId.MAINNET]: undefined,
   [ChainId.MATIC]: new ApolloClient({
     link: new HttpLink({
       uri: process.env.REACT_APP_GRAPH_137_BLOCK_CLIENT_API_URL,
@@ -89,15 +105,19 @@ export const blockClient: ApolloChainMap = {
     }),
     cache: new InMemoryCache(),
   }),
-  [ChainId.ZKEVM]: new ApolloClient({
+  [ChainId.ZK_EVM]: new ApolloClient({
     link: new HttpLink({
       uri: process.env.REACT_APP_GRAPH_1101_BLOCK_CLIENT_API_URL,
     }),
     cache: new InMemoryCache(),
   }),
   [ChainId.MUMBAI]: undefined,
-  [ChainId.DOEGCHAIN_TESTNET]: undefined,
+  [ChainId.DOGETESTNET]: undefined,
   [ChainId.ZKTESTNET]: undefined,
+  [ChainId.ZKSYNCALPHA]: undefined,
+  [ChainId.ZKSYNCERA]: undefined,
+  [ChainId.LINEAMAIN]: undefined,
+  [ChainId.LINEATEST]: undefined,
 };
 
 export const lensClient = new ApolloClient({

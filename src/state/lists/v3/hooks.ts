@@ -21,7 +21,7 @@ type Mutable<T> = {
 const EMPTY_LIST: TokenAddressMap = {
   [ChainId.MUMBAI]: {},
   [ChainId.MATIC]: {},
-  [ChainId.DOEGCHAIN_TESTNET]: {},
+  [ChainId.DOGETESTNET]: {},
   [ChainId.DOGECHAIN]: {},
 };
 

@@ -1,6 +1,6 @@
 {
-  "short_name": "QuickSwap",
-  "name": "QuickSwap",
+  "short_name": "AlkaSwap",
+  "name": "AlkaSwap Multi Layer 2 Protocol",
   "icons": [
     {
       "src": "./icons/windows11/SmallTile.scale-100.png",
@@ -453,7 +453,7 @@
       "sizes": "1024x1024"
     }
   ],
-  "start_url": "https://quickswap.exchange/#",
+  "start_url": "./#",
   "display": "standalone",
   "description": "QuickSwap is the largest DEX on the Polygon network",
   "theme_color": "#000000",
@@ -461,22 +461,22 @@
   "orientation": "any",
   "screenshots": [
     {
-      "src": "./screenshots/QS_1284x2778 - ScreenShot–1.png",
+      "src": "./screenshots/QS_1284x2778_ScreenShot_1.png",
       "sizes": "1284x2778",
       "type": "image/png"
     },
     {
-      "src": "./screenshots/QS_1284x2778 - ScreenShot–2.png",
+      "src": "./screenshots/QS_1284x2778_ScreenShot_2.png",
       "sizes": "1284x2778",
       "type": "image/png"
     },
     {
-      "src": "./screenshots/QS_1284x2778 - ScreenShot–3.png",
+      "src": "./screenshots/QS_1284x2778_ScreenShot_3.png",
       "sizes": "1284x2778",
       "type": "image/png"
     },
     {
-      "src": "./screenshots/QS_1284x2778 - ScreenShot.png",
+      "src": "./screenshots/QS_1284x2778_ScreenShot.png",
       "sizes": "1284x2778",
       "type": "image/png"
     }

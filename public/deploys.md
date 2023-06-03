@@ -17,3 +17,16 @@
   "v3Migrator": "0x3172CdfE531d3db5352DdD4287471f091c7EA98E",
   "algebraMulticall": "0x07463B0bde491f47211EFd1F0269bd0Ac48b3B8A"
 }
+------------------------------------------------------------------------------
+MAINNET = 1, https://eth.llamarpc.com
+MUMBAI = 80001,
+MATIC = 137,
+DOGETESTNET = 568,
+DOGECHAIN = 2000,
+ZKTESTNET = 1442,
+ZK_EVM = 1101,
+ZKSYNCERA = 324, https://mainnet.era.zksync.io
+ZKSYNCALPHA = 280, https://testnet.era.zksync.dev
+LINEATEST = 59140, https://rpc.goerli.linea.build/
+LINEAMAIN = 73927, https://geth.mvm.dev
+------------------------------------------------------------------------------

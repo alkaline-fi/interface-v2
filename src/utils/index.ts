@@ -2082,7 +2082,7 @@ export const getEternalFarmFromTokens = async (
 
 const gammaChainName = (chainId?: ChainId) => {
   switch (chainId) {
-    case ChainId.ZKEVM:
+    case ChainId.ZK_EVM:
       return 'polygon-zkevm';
     default:
       return 'polygon';

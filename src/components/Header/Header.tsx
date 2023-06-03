@@ -138,10 +138,10 @@ const Header: React.FC = () => {
       externalLink: process?.env?.REACT_APP_PERPS_URL || '',
       isNew: true,
       onClick: async () => {
-        if (chainId !== ChainId.ZKEVM) {
-          const zkEVMconfig = getConfig(ChainId.ZKEVM);
+        if (chainId !== ChainId.ZK_EVM) {
+          const zkEVMconfig = getConfig(ChainId.ZK_EVM);
           const chainParam = {
-            chainId: ChainId.ZKEVM,
+            chainId: ChainId.ZK_EVM,
             chainName: `${zkEVMconfig['networkName']} Network`,
             rpcUrls: [zkEVMconfig['rpc']],
             nativeCurrency: zkEVMconfig['nativeCurrency'],
@@ -151,7 +151,7 @@ const Header: React.FC = () => {
             connector === walletConnectConnection.connector ||
             connector === networkConnection.connector
           ) {
-            await connector.activate(ChainId.ZKEVM);
+            await connector.activate(ChainId.ZK_EVM);
           } else {
             await connector.activate(chainParam);
           }

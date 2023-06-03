@@ -79,6 +79,10 @@ export type NetworkInfoChainMap = Readonly<
 >;
 
 export const networkInfoMap: NetworkInfoChainMap = {
+  [ChainId.MAINNET]: {
+    rpcUrl: 'https://eth.llamarpc.com',
+    scanUrl: 'https://etherscan.io/',
+  },
   [ChainId.MATIC]: {
     rpcUrl: 'https://polygon-rpc.com/',
     scanUrl: 'https://polygonscan.com/',
@@ -91,7 +95,7 @@ export const networkInfoMap: NetworkInfoChainMap = {
     rpcUrl: 'https://rpc-mumbai.maticvigil.com/',
     scanUrl: 'https://mumbai.polygonscan.com/',
   },
-  [ChainId.DOEGCHAIN_TESTNET]: {
+  [ChainId.DOGETESTNET]: {
     rpcUrl: 'https://rpc-testnet.dogechain.dog',
     scanUrl: 'https://explorer-testnet.dogechain.dog/',
   },
@@ -99,9 +103,25 @@ export const networkInfoMap: NetworkInfoChainMap = {
     rpcUrl: 'https://rpc.public.zkevm-test.net',
     scanUrl: 'https://testnet-zkevm.polygonscan.com/',
   },
-  [ChainId.ZKEVM]: {
+  [ChainId.ZK_EVM]: {
     rpcUrl: 'https://zkevm-rpc.com',
     scanUrl: 'https://zkevm.polygonscan.com/',
+  },
+  [ChainId.ZKSYNCALPHA]: {
+    rpcUrl: 'https://testnet.era.zksync.dev/',
+    scanUrl: 'https://goerli.explorer.zksync.io/',
+  },
+  [ChainId.ZKSYNCERA]: {
+    rpcUrl: 'https://mainnet.era.zksync.io',
+    scanUrl: 'https://explorer.zksync.io/',
+  },
+  [ChainId.LINEAMAIN]: {
+    rpcUrl: 'https://geth.mvm.dev/',
+    scanUrl: 'https://scan.mvm.dev/',
+  },
+  [ChainId.LINEATEST]: {
+    rpcUrl: 'https://rpc.goerli.linea.build/',
+    scanUrl: 'https://explorer.goerli.linea.build/',
   },
 };
 

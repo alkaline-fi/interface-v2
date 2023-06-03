@@ -6,12 +6,17 @@ import { AVERAGE_L1_BLOCK_TIME, CHAIN_IDS_TO_NAMES } from './index';
 import { ChainId } from '@uniswap/sdk';
 
 export const rpcMap = {
+  [ChainId.MAINNET]: 'https://eth.llamarpc.com',
   [ChainId.MATIC]: 'https://polygon-rpc.com/',
   [ChainId.MUMBAI]: 'https://rpc-mumbai.maticvigil.com/',
   [ChainId.DOGECHAIN]: 'https://rpc-sg.dogechain.dog/',
-  [ChainId.DOEGCHAIN_TESTNET]: 'https://rpc-testnet.dogechain.dog',
+  [ChainId.DOGETESTNET]: 'https://rpc-testnet.dogechain.dog',
   [ChainId.ZKTESTNET]: 'https://rpc.public.zkevm-test.net',
-  [ChainId.ZKEVM]: 'https://zkevm-rpc.com',
+  [ChainId.ZK_EVM]: 'https://zkevm-rpc.com',
+  [ChainId.ZKSYNCALPHA]: 'https://testnet.era.zksync.dev',
+  [ChainId.ZKSYNCERA]: 'https://mainnet.era.zksync.io',
+  [ChainId.LINEAMAIN]: 'https://geth.mvm.dev',
+  [ChainId.LINEATEST]: 'https://rpc.goerli.linea.build/',
 };
 
 class AppJsonRpcProvider extends StaticJsonRpcProvider {
@@ -62,12 +67,15 @@ class AppJsonRpcProvider extends StaticJsonRpcProvider {
 export const RPC_PROVIDERS: {
   [key in ChainId]: StaticJsonRpcProvider;
 } = {
+  [ChainId.MAINNET]: new AppJsonRpcProvider(ChainId.MAINNET),
   [ChainId.MATIC]: new AppJsonRpcProvider(ChainId.MATIC),
   [ChainId.MUMBAI]: new AppJsonRpcProvider(ChainId.MUMBAI),
   [ChainId.DOGECHAIN]: new AppJsonRpcProvider(ChainId.DOGECHAIN),
-  [ChainId.DOEGCHAIN_TESTNET]: new AppJsonRpcProvider(
-    ChainId.DOEGCHAIN_TESTNET,
-  ),
-  [ChainId.ZKEVM]: new AppJsonRpcProvider(ChainId.ZKEVM),
+  [ChainId.DOGETESTNET]: new AppJsonRpcProvider(ChainId.DOGETESTNET),
+  [ChainId.ZK_EVM]: new AppJsonRpcProvider(ChainId.ZK_EVM),
   [ChainId.ZKTESTNET]: new AppJsonRpcProvider(ChainId.ZKTESTNET),
+  [ChainId.ZKSYNCALPHA]: new AppJsonRpcProvider(ChainId.ZKSYNCALPHA),
+  [ChainId.ZKSYNCERA]: new AppJsonRpcProvider(ChainId.ZKSYNCERA),
+  [ChainId.LINEAMAIN]: new AppJsonRpcProvider(ChainId.LINEAMAIN),
+  [ChainId.LINEATEST]: new AppJsonRpcProvider(ChainId.LINEATEST),
 };
